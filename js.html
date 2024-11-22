@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+  </head>
+  <body>
+    <img id="images" style="width: 100px; height: 100px" src="" alt="Image" />
+    <button onclick="prev()">prev</button>
+    <button onclick="next()">next</button>
+
+    <script>
+      let images = document.getElementById("images");
+      let i = 0;
+      let arr = [
+        "https://i.pinimg.com/474x/13/29/fe/1329fe10eb5b02c094715cc61f9ff139.jpg",
+        "https://i.pinimg.com/236x/7a/fe/34/7afe3436d3bedf723a7953a180ec1667.jpg",
+        "https://i.pinimg.com/736x/0b/cb/65/0bcb65e454edb6270779e183d78f3bbd.jpg",
+        "https://scontent.fuln5-1.fna.fbcdn.net/v/t1.15752-9/462562633_486651911092032_286176234417782758_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_ohc=rXMV2ImBrZ0Q7kNvgFIO0xq&_nc_zt=23&_nc_ht=scontent.fuln5-1.fna&oh=03_Q7cD1QE3jXyzu4w0ILJB7Q-RkEs7GvW19Wje78WJxb3niENhqQ&oe=6753A02E", 
+        "https://scontent.xx.fbcdn.net/v/t1.15752-9/465655868_963649582455062_3373745928283177543_n.jpg?stp=dst-jpg_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=JqhljN_4bIwQ7kNvgEe035A&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QFL8Qg36T4TESm12uYlPYasK7e8zJGj0SzEG9n3RR3wTg&oe=67539AFF",
+        "https://scontent.xx.fbcdn.net/v/t1.15752-9/461818130_900027012046385_7601381158125255519_n.jpg?stp=dst-jpg_s480x480&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=vmnbYdjOsZAQ7kNvgGmul22&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QFAZWPSV3lYRJ019nw-CtMWdIfVaVKmhE1EnZDPf1hxqQ&oe=6753CB28",
+      ];
+      images.src = arr[i];
+
+      function prev() {
+        i -= 1;
+        if (i < 0) {
+          i = arr.length - 1; 
+        }
+        images.src = arr[i];
+        console.log("Previous image:", arr[i]);
+      }
+
+      function next() {
+        i += 1;
+        if (i >= arr.length) {
+          i = 0; 
+        }
+        images.src = arr[i];
+        console.log("Next image:", arr[i]);
+      }
+    </script>
+  </body>
+</html>
